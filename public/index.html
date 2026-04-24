@@ -154,8 +154,8 @@ input { font-family: inherit; font-size: inherit; color: inherit; }
   padding: clamp(40px,10vw,56px) clamp(20px,6vw,32px) clamp(32px,8vw,40px);
   text-align: center; margin-bottom: 16px; position: relative; overflow: hidden; }
 .countdown-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 1px;
-  background: linear-gradient(90deg, transparent, var(--text), transparent); opacity: 0.3; }
-.countdown-card.payday::before { background: linear-gradient(90deg, transparent, var(--success), transparent); opacity: 0.6; }
+  background: var(--text); opacity: 0.3; }
+.countdown-card.payday::before { background: var(--success); opacity: 0.6; }
 .countdown-label { font-family: var(--font-mono); font-size: 11px; font-weight: 500;
   text-transform: uppercase; letter-spacing: 0.14em; color: var(--dim); margin-bottom: 18px; }
 .countdown-card.payday .countdown-label { color: var(--success); }
@@ -506,7 +506,7 @@ input { font-family: inherit; font-size: inherit; color: inherit; }
     if (isPaydayToday(state.day)) {
       card.classList.add('payday');
       label.textContent = '本日、給料日です';
-      daysDisplay.textContent = '🎉';
+      daysDisplay.textContent = '0';
       daysUnit.textContent = 'PAYDAY';
       hmsDisplay.textContent = '';
       amountDisplay.textContent = fmt(state.salary);
